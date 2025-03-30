@@ -1,7 +1,6 @@
 {
   "name": "coffee-menu-app",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "concurrently \"npm run backend\" \"npm run frontend\"",
@@ -9,13 +8,36 @@
     "frontend": "npm start --prefix frontend"
   },
   "keywords": [],
-  "author": "",
+  "author": "Talha Qudsi",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^9.1.2"
   },
   "dependencies": {
-    "coffee-menu-app": "file:",
     "react-scripts": "^5.0.1"
-  }
+  },
+  "peerDependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.8.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.4.1",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4",
+	"body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/talhaqudsi/coffee-menu-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/talhaqudsi/coffee-menu-app/issues"
+  },
+  "homepage": "https://github.com/talhaqudsi/coffee-menu-app#readme",
+  "description": ""
 }
