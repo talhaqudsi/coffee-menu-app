@@ -1,7 +1,3 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Features
 - **Create** new menu items with Name, Price, Description, Category
 - **Read** menu information from local JSON data store
