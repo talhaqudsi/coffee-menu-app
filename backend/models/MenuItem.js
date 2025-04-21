@@ -4,7 +4,8 @@ const menuItemSchema = new mongoose.Schema({
   name: { type: String, required: true },
   price: { type: Number, required: true },
   description: String,
-  category: String
+  category: String,
+  calories: Number
 });
 
 module.exports = mongoose.model('MenuItem', menuItemSchema);

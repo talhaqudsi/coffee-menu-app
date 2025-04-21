@@ -2,11 +2,13 @@ import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import CoffeeMenu from '../components/CoffeeMenu';
 import ProductForm from '../components/ProductForm';
+import { SignedIn, useAuth } from '@clerk/clerk-react';
 
 const MenuPage = () => {
   const [menu, setMenu] = useState([]);
   const [editingItem, setEditingItem] = useState(null);
   const formRef = useRef(null);
+  const { getToken } = useAuth();
 
   const fetchMenu = async () => {
     const res = await axios.get('http://localhost:5001/api/menu');
@@ -19,13 +21,32 @@ const MenuPage = () => {
 
   const handleAddOrUpdate = async (item) => {
     try {
-      if (item.id) {
-        console.log("PUT request to:", `http://localhost:5001/api/menu/${item.id}`);
-        await axios.put(`http://localhost:5001/api/menu/${item.id}`, item);
+      const token = await getToken();
+
+      if (item._id) {
+        // console.log("PUT request to:", `http://localhost:5001/api/menu/${item._id}`);
+        await axios.put(
+          `http://localhost:5001/api/menu/${item._id}`,
+          item,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
       } else {
-        console.log("POST request to: http://localhost:5001/api/menu");
-        await axios.post('http://localhost:5001/api/menu', item);
+        // console.log("POST request to: http://localhost:5001/api/menu");
+        await axios.post(
+          'http://localhost:5001/api/menu',
+          item,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
       }
+
       setEditingItem(null);
       fetchMenu();
     } catch (err) {
@@ -34,8 +55,19 @@ const MenuPage = () => {
   };
 
   const handleDelete = async (id) => {
+    // console.log("Delete request to:", `http://localhost:5001/api/menu/${id}`);
     try {
-      await axios.delete(`http://localhost:5001/api/menu/${id}`);
+      const token = await getToken();
+
+      await axios.delete(
+        `http://localhost:5001/api/menu/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
       fetchMenu();
     } catch (err) {
       console.error("Delete failed:", err);
@@ -51,13 +83,17 @@ const MenuPage = () => {
 
   return (
     <div>
-        <h2 className="center-title">Our Cozy Coffee Menu</h2>      
+      <h2 className="center-title">Our Cozy Coffee Menu</h2>
+
+      <SignedIn>
         <ProductForm
-        ref={formRef}
-        onSubmit={handleAddOrUpdate}
-        editingItem={editingItem}
-        onCancel={() => setEditingItem(null)}
-      />
+          ref={formRef}
+          onSubmit={handleAddOrUpdate}
+          editingItem={editingItem}
+          onCancel={() => setEditingItem(null)}
+        />
+      </SignedIn>
+
       <CoffeeMenu
         items={menu}
         onEdit={handleEdit}
