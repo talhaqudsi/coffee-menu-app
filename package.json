@@ -14,7 +14,9 @@
     "concurrently": "^9.1.2"
   },
   "dependencies": {
-    "react-scripts": "^5.0.1"
+    "coffee-menu-app": "file:",
+    "dotenv": "^16.5.0",
+    "react-scripts": "5.0.1"
   },
   "peerDependencies": {
     "@testing-library/dom": "^10.4.0",
@@ -22,14 +24,14 @@
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.8.4",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.4.1",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4",
-	"body-parser": "^2.2.0",
-    "cors": "^2.8.5",
-    "express": "^4.21.2"
+    "web-vitals": "^2.1.4"
   },
   "repository": {
     "type": "git",

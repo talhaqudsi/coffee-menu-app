@@ -114,6 +114,35 @@ button:hover {
   text-align: center;
 }
 
+.header {
+  background: #1f1f1f;
+  padding: 1rem;
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  margin-right: 1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.auth-section {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-greeting {
+  color: #ccc;
+}
+
 form {
   display: flex;
   flex-direction: column;

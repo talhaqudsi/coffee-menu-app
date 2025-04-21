@@ -6,7 +6,6 @@ import ProductForm from '../components/ProductForm';
 const OrderPage = () => {
   const [menu, setMenu] = useState([]);
   const [editingItem, setEditingItem] = useState(null);
-  const port = 5001
   const formRef = useRef(null);
 
   const fetchMenu = async () => {
