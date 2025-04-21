@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "install-all": "npm install && npm install --prefix frontend && npm install --prefix backend",
     "start": "concurrently \"npm run backend\" \"npm run frontend\"",
     "backend": "npm start --prefix backend",
     "frontend": "npm start --prefix frontend"
@@ -16,10 +17,5 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/talhaqudsi/coffee-menu-app.git"
-  },
-  "dependencies": {
-    "@clerk/express": "^1.4.7",
-    "coffee-menu-app": "file:",
-    "dotenv": "^16.5.0"
   }
 }

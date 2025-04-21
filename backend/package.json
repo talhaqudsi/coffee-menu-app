@@ -10,9 +10,10 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@clerk/express": "^4.44.3",
+    "@clerk/express": "^1.4.7",
     "backend": "file:",
     "body-parser": "^2.2.0",
+    "coffee-menu-app": "file:..",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^4.21.2",

@@ -5,6 +5,7 @@
   "dependencies": {
     "@clerk/clerk-react": "^5.28.2",
     "axios": "^1.8.4",
+    "coffee-menu-app": "file:..",
     "frontend": "file:",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
