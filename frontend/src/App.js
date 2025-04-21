@@ -3,7 +3,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import { SignedIn, SignedOut, SignInButton, SignOutButton, UserButton, useUser } from '@clerk/clerk-react';
 
 import Home from './pages/Home';
-import OrderPage from './pages/OrderPage';
+import MenuPage from './pages/MenuPage';
 import './App.css';
 
 function Header() {
@@ -13,7 +13,7 @@ function Header() {
     <header className="header">
       <nav className="navbar">
         <Link to="/" className="nav-link">Home</Link>
-        <Link to="/order" className="nav-link">Order</Link>
+        <Link to="/menu" className="nav-link">Menu</Link>
 
         <div className="auth-section">
           <SignedOut>
@@ -21,7 +21,7 @@ function Header() {
           </SignedOut>
 
           <SignedIn>
-            <span className="user-greeting">Hello, {user?.firstName || user?.username}</span>
+            <span className="user-greeting">Hello, {user?.firstName || user?.username}!</span>
             <UserButton />
             <SignOutButton />
           </SignedIn>
@@ -37,7 +37,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/order" element={<OrderPage />} />
+        <Route path="/menu" element={<MenuPage />} />
       </Routes>
     </>
   );

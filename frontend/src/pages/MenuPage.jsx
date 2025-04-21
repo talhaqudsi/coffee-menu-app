@@ -3,7 +3,7 @@ import axios from 'axios';
 import CoffeeMenu from '../components/CoffeeMenu';
 import ProductForm from '../components/ProductForm';
 
-const OrderPage = () => {
+const MenuPage = () => {
   const [menu, setMenu] = useState([]);
   const [editingItem, setEditingItem] = useState(null);
   const formRef = useRef(null);
@@ -67,4 +67,4 @@ const OrderPage = () => {
   );
 };
 
-export default OrderPage;
+export default MenuPage;
