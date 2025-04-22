@@ -34,16 +34,12 @@ git clone git@github.com:talhaqudsi/coffee-menu-app.git
 cd coffee-menu-app
 ```
 
----
-
 ### 2. Install Dependencies
 The following command will install all required dependencies when ran from the root directory:
 ```bash
 # At root directory
 npm run install-all
 ```
-
----
 
 ### 3. Environment Setup
 
@@ -70,8 +66,6 @@ cd backend
 node seed.js
 ```
 
----
-
 ### 5. Run the App (Dev Mode)
 
 ```bash
@@ -83,13 +77,9 @@ This runs both backend and frontend concurrently:
 - Frontend: http://localhost:3000
 - Backend: http://localhost:5001
 
----
-
 ## 🔐 Clerk-Protected Routes
 
 Routes like `POST /api/menu`, `PUT /api/menu/:id`, and `DELETE /api/menu/:id` require a valid Clerk Bearer token.
-
----
 
 ## 🧪 Testing with Postman
 
@@ -103,5 +93,3 @@ To test protected routes:
    ```
    http://localhost:5001/api/menu
    ```
-
----
