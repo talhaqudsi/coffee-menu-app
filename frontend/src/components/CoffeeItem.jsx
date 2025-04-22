@@ -7,7 +7,7 @@ const CoffeeItem = ({ item, onEdit, onDelete }) => (
   <p><strong>Category:</strong> {item.category}</p>
   <p><strong>Description:</strong> {item.description}</p>
   <p><strong>Price:</strong> ${Number(item.price).toFixed(2)}</p>
-  <p><strong>Calories:</strong> {Number(item.price).toFixed(0)}</p>
+  <p><strong>Calories:</strong> {Number(item.calories).toFixed(0)}</p>
   <SignedIn>
       <button onClick={() => onEdit(item)}>Edit</button>
       <button onClick={() => onDelete(item._id)}>Delete</button>
