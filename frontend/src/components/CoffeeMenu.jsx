@@ -5,7 +5,7 @@ const CoffeeMenu = ({ items, onEdit, onDelete }) => (
   <ul className="coffee-menu">
     {items.map(item => (
       <CoffeeItem
-        key={item.id}
+        key={item._id}
         item={item}
         onEdit={onEdit}
         onDelete={onDelete}

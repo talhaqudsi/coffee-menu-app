@@ -26,7 +26,7 @@ const ProductForm = forwardRef(({ onSubmit, editingItem, onCancel }, ref) => {
       price: parseFloat(formData.price),
     };
     onSubmit(cleanData);
-    setFormData({ name: '', price: '', description: '', category: '' });
+    setFormData({ name: '', price: '', description: '', category: '', calories: '' });
   };
 
   return (
@@ -36,6 +36,7 @@ const ProductForm = forwardRef(({ onSubmit, editingItem, onCancel }, ref) => {
       <input name="price" type="number" placeholder="Price" value={formData.price} onChange={handleChange} required />
       <input name="description" placeholder="Description" value={formData.description} onChange={handleChange} required />
       <input name="category" placeholder="Category" value={formData.category} onChange={handleChange} required />
+      <input name="calories" placeholder="Calories" value={formData.calories} onChange={handleChange} required />
       <button type="submit">{editingItem ? "Update" : "Add"}</button>
       {editingItem && <button onClick={onCancel}>Cancel</button>}
     </form>
