@@ -17,5 +17,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/talhaqudsi/coffee-menu-app.git"
+  },
+  "dependencies": {
+    "coffee-menu-app": "file:"
   }
 }
